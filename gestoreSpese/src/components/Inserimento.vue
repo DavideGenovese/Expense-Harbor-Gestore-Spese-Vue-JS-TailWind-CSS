@@ -72,6 +72,12 @@
         Add new
       </button>
     </div>
+    <div class="flex justify-end m-2">
+      <button type="submit" @click="addItem"
+        class="text-black bg-blue-200 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+        Edit
+      </button>
+    </div>
   </div>
   <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
     <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
@@ -94,6 +100,10 @@
           <td>{{ item.descrizione }}</td>
           <td>{{ item.categoria }}</td>
           <td>{{ item.importo }}</td>
+          <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+</svg>
+</td>
         </tr>
         </tbody>
       </table>
