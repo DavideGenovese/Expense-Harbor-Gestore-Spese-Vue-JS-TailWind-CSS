@@ -6,9 +6,8 @@
         <label
           for="date"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Data</label
-        >
-        <input
+          >Data</label>
+        <input v-model="data"
           type="date"
           name="date"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -21,7 +20,7 @@
           for="category"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Categoria</label>
-          <select
+          <select v-model="categoria"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
         >
           <option selected="">Select category</option>
@@ -48,7 +47,7 @@
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Descrizione</label
         >
-        <input
+        <input v-model="descrizione"
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
           placeholder="Write product description here"/>
       </div>
@@ -58,7 +57,7 @@
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Importo</label
         >
-        <input
+        <input v-model="importo"
           type="number"
           name="price"
           id="price"
@@ -69,23 +68,63 @@
       </div>
     </div>
     <div class="flex justify-end">
-      <button
-        type="submit"
+      <button type="submit" @click="addItem"
         class="text-black bg-blue-200 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
         Add new
       </button>
     </div>
   </div>
+  <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+      <!-- Start coding here -->
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th class="px-4 py-3">Data</th>
+            <th class="px-4 py-3">Descrizione</th>
+            <th class="px-4 py-3">Categoria</th>
+            <th class="px-4 py-3">Importo</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in items">
+          <td>{{ item.data }}</td>
+          <td>{{ item.descrizione }}</td>
+          <td>{{ item.categoria }}</td>
+          <td>{{ item.importo }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 </template>
 <script>
 export default{ 
     data(){  
         return{  
-
+          items:[],
+          newItem:{  
+            data:'',
+            categoria:'',
+            descrizione:'',
+            importo:''
+          }
         }
     },
     methods:{  
-      
+      addItem(){  
+        this.items.push(this.newItem)
+        this.newItem={
+            data:'',
+            categoria:'',
+            descrizione:'',
+            importo:''
+        }
+        console.log(newitem)
+      }
     }
 }
 </script>
