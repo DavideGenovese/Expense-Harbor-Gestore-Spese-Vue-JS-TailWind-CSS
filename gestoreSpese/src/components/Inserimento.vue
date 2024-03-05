@@ -87,6 +87,7 @@
           class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
         >
           <tr>
+            <th class="px-4 py-3">ID</th>
             <th class="px-4 py-3">Data</th>
             <th class="px-4 py-3">Descrizione</th>
             <th class="px-4 py-3">Categoria</th>
@@ -95,14 +96,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in items">
+          <tr v-for="item in items" :key="item.id">
+          <td>{{ item.id }}</td>
           <td>{{ item.data }}</td>
           <td>{{ item.descrizione }}</td>
           <td>{{ item.categoria }}</td>
           <td>{{ item.importo }}</td>
-          <td><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-</svg>
+          <td><button @click="deleteItem(item.id)">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+              </button>
+
 </td>
         </tr>
         </tbody>
@@ -115,7 +119,7 @@ export default{
     data(){  
         return{  
           items:[],
-          newItem:{  
+          newItem:{ 
             data:'',
             categoria:'',
             descrizione:'',
@@ -124,17 +128,28 @@ export default{
         }
     },
     methods: {
-    addItem() {
-      this.items.push({ ...this.newItem });
+  addItem() {
+    const newItemWithId = { 
+      id:this.items.length+1,
+      ...this.newItem, }; 
+    this.items.push(newItemWithId);
+    
+    localStorage.setItem('items', JSON.stringify(this.items));
+    this.newItem = { data: '', categoria: '', descrizione: '', importo: '' };
+  },
+  deleteItem(itemId) {
+    const index = this.items.findIndex(item => item.id === itemId);
+    if (index !== -1) {
+      this.items.splice(index, 1);
       
       localStorage.setItem('items', JSON.stringify(this.items));
-      this.newItem = { data: '', categoria: '', descrizione: '', importo: '' };
-    }
-  },
-  mounted() {
-    if (localStorage.getItem('items')) {
-      this.items = JSON.parse(localStorage.getItem('items'));
     }
   }
+},
+mounted() {
+  if (localStorage.getItem('items')) {
+    this.items = JSON.parse(localStorage.getItem('items'));
+  }
+}
 }
 </script>
