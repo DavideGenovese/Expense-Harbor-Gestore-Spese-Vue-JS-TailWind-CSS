@@ -7,7 +7,7 @@
           for="date"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Data</label>
-        <input v-model="data"
+        <input v-model="newItem.data"
           type="date"
           name="date"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
@@ -20,9 +20,8 @@
           for="category"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Categoria</label>
-          <select v-model="categoria"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-        >
+          <select v-model="newItem.categoria"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
           <option selected="">Select category</option>
           <option value="Casa">Casa</option>
           <option value="Abbigliamento">Abbigliamento</option>
@@ -47,7 +46,7 @@
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Descrizione</label
         >
-        <input v-model="descrizione"
+        <input v-model="newItem.descrizione"
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
           placeholder="Write product description here"/>
       </div>
@@ -57,7 +56,7 @@
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Importo</label
         >
-        <input v-model="importo"
+        <input v-model="newItem.importo"
           type="number"
           name="price"
           id="price"
@@ -114,17 +113,18 @@ export default{
           }
         }
     },
-    methods:{  
-      addItem(){  
-        this.items.push(this.newItem)
-        this.newItem={
-            data:'',
-            categoria:'',
-            descrizione:'',
-            importo:''
-        }
-        console.log(newitem)
-      }
+    methods: {
+    addItem() {
+      this.items.push({ ...this.newItem });
+      
+      localStorage.setItem('items', JSON.stringify(this.items));
+      this.newItem = { data: '', categoria: '', descrizione: '', importo: '' };
     }
+  },
+  mounted() {
+    if (localStorage.getItem('items')) {
+      this.items = JSON.parse(localStorage.getItem('items'));
+    }
+  }
 }
 </script>
