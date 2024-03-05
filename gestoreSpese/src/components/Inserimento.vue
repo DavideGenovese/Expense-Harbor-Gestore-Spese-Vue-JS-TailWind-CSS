@@ -1,6 +1,7 @@
 <template>
         <div class="p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
     <!-- Modal body -->
+    <form @submit="addItem">
     <div class="grid gap-4 mb-4 sm:grid-cols-2">
       <div>
         <label
@@ -21,7 +22,7 @@
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >Categoria</label>
           <select v-model="newItem.categoria"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
           <option selected="">Select category</option>
           <option value="Casa">Casa</option>
           <option value="Abbigliamento">Abbigliamento</option>
@@ -48,7 +49,7 @@
         >
         <input v-model="newItem.descrizione"
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-          placeholder="Write product description here"/>
+          placeholder="Write product description here" required/>
       </div>
       <div>
         <label
@@ -67,13 +68,14 @@
       </div>
     </div>
     <div class="flex justify-end">
-      <button type="submit" @click="addItem"
+      <button type="submit"
         class="text-black bg-blue-200 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
         Add new
       </button>
     </div>
+  </form>
     <div class="flex justify-end m-2">
-      <button type="submit" @click="addItem"
+      <button type="submit" @click="EditItem"
         class="text-black bg-blue-200 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
         Edit
       </button>
@@ -97,22 +99,24 @@
         </thead>
         <tbody>
           <tr v-for="item in items" :key="item.id">
-          <td>{{ item.id }}</td>
-          <td>{{ item.data }}</td>
-          <td>{{ item.descrizione }}</td>
-          <td>{{ item.categoria }}</td>
-          <td>{{ item.importo }}</td>
-          <td><button @click="deleteItem(item.id)">
+          <td class="px-4 py-3">{{ item.id }}</td>
+          <td class="px-4 py-3">{{ item.data }}</td>
+          <td class="px-4 py-3">{{ item.descrizione }}</td>
+          <td class="px-4 py-3">{{ item.categoria }}</td>
+          <td class="px-4 py-3">{{ item.importo }}</td>
+          <td class="px-4 py-3"><button @click="deleteItem(item.id)">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
-              </button>
-
-</td>
+              </button></td>
         </tr>
         </tbody>
       </table>
     </div>
   </section>
+  <div class="flex justify-end items-center px-4 my-4">
+    <button @click="sommaSpese">somma</button>
+    <div class="w-[150px] h-[60px] p-4 rounded-lg bg-white border-2 border-black font-semibold">Spesa Totale:{{ somma }}</div>
+  </div>
 </template>
 <script>
 export default{ 
@@ -144,12 +148,16 @@ export default{
       
       localStorage.setItem('items', JSON.stringify(this.items));
     }
-  }
+  },
+  editItem(){  
+
+  },
+  
 },
 mounted() {
   if (localStorage.getItem('items')) {
     this.items = JSON.parse(localStorage.getItem('items'));
   }
-}
+},
 }
 </script>
