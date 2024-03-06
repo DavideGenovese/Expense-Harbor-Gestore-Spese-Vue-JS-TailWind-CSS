@@ -10,6 +10,6 @@ export default {
 
 <template>
   <Header />
-  <RouterView />
+    <RouterView />
   <Footer />
 </template>
