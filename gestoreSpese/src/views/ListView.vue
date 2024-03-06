@@ -8,11 +8,23 @@ export default {
   data() {
     return {
       dataList: JSON.parse(localStorage.getItem("item")) ?? [],
+      spesaTotale: 0,
     };
+  },
+  computed: {
+    sommaTotale() {
+      this.spesaTotale = 0;
+      this.dataList.forEach((element) => {
+        this.spesaTotale += element.importo;
+      });
+      return this.spesaTotale;
+    },
   },
 };
 </script>
 
 <template>
-  <ListCard :list="dataList" />
+  <div class="min-h-[68vh]">
+    <ListCard :list="dataList" :totale="sommaTotale" />
+  </div>
 </template>

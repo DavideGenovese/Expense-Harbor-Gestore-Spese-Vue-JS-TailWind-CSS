@@ -90,6 +90,9 @@ export default {
                   </svg>
                 </a>
               </div>
+<<<<<<< HEAD
+              <div class="mt-8 md:mt-0 w-full">
+=======
               <div class="mt-8 md:mt-0 md:order-1">
                 <span class="mt-2 text-l font-light text-white">
                   Copyright © 2024
@@ -98,4 +101,11 @@ export default {
               </div>
             </div>
           </footer>
+<<<<<<< HEAD
+  
+
+
+</template>
+=======
   </template>
+>>>>>>> 3a80bb75f2e535a1aec747b4c928e51350a568af
