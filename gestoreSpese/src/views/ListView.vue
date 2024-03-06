@@ -14,7 +14,5 @@ export default {
 </script>
 
 <template>
-  <div class="h-screen">
-    <ListCard :list="dataList" />
-  </div>
+  <ListCard :list="dataList" />
 </template>
