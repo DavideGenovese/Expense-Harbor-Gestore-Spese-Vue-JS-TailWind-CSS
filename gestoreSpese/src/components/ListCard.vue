@@ -62,10 +62,10 @@ export default {
 
   <div class="mx-4 overflow-x-auto shadow-md sm:rounded-lg">
     <table
-      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      class="w-full text-sm text-left rtl:text-right text-gray-600 dark:text-gray-400"
     >
       <thead
-        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        class="text-xs  uppercase bg-gray-700 text-gray-400"
       >
         <tr>
           <th scope="col" class="px-6 py-3">Data</th>
@@ -76,10 +76,10 @@ export default {
         </tr>
       </thead>
       <tbody v-if="list" v-for="item in list" :key="item.id">
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+        <tr class=" border-b bg-gray-800 border-gray-700">
           <th
             scope="row"
-            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            class="px-6 py-4 font-medium  whitespace-nowrap text-white"
           >
             {{ item.data }}
           </th>
@@ -89,13 +89,13 @@ export default {
           <td class="px-6 py-4">
             <button
               @click="setEdit(item.id)"
-              class="font-medium mr-4 text-blue-600 dark:text-blue-500 hover:underline"
+              class="font-medium mr-4  text-blue-500 hover:underline"
             >
               Edit
             </button>
             <button
               @click="showDelete(item.id)"
-              class="font-medium mr-4 text-red-600 dark:text-red-500 hover:underline"
+              class="font-medium mr-4  text-red-500 hover:underline"
             >
               Delete
             </button>
@@ -106,12 +106,12 @@ export default {
             >
               <div class="relative p-4 w-full max-w-md max-h-full">
                 <div
-                  class="relative bg-white rounded-lg shadow dark:bg-gray-700"
+                  class="relative rounded-lg shadow bg-gray-700"
                 >
                   <button
                     @click="showDelete"
                     type="button"
-                    class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    class="absolute top-3 end-2.5  bg-transparent   rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center hover:bg-gray-600 hover:text-white"
                     data-modal-hide="popup-modal"
                   >
                     <svg
@@ -133,7 +133,7 @@ export default {
                   </button>
                   <div class="p-4 md:p-5 text-center">
                     <svg
-                      class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
+                      class="mx-auto mb-4  w-12 h-12 text-gray-200"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -148,14 +148,14 @@ export default {
                       />
                     </svg>
                     <h3
-                      class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400"
+                      class="mb-5 text-lg font-normal  text-gray-400"
                     >
                       Are you sure you want to delete?
                     </h3>
                     <button
                       @click="removeItem"
                       type="button"
-                      class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
+                      class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none  focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
                     >
                       Yes, I'm sure
                     </button>
@@ -163,7 +163,7 @@ export default {
                       @click="showDelete"
                       data-modal-hide="popup-modal"
                       type="button"
-                      class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                      class="py-2.5 px-5 ms-3 text-sm font-medium  focus:outline-none  rounded-lg border    focus:z-10 focus:ring-4  focus:ring-gray-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700"
                     >
                       No, cancel
                     </button>
@@ -178,7 +178,7 @@ export default {
   </div>
   <div class="flex justify-end p-4 min-w-8 mx-auto">
     <div
-      class="my-4 text-white bg-gray-600 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg shadow-2xl text-sm px-5 py-2.5 text-center flex justify-center items-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+      class="my-4 text-white  focus:ring-4 focus:outline-none  font-medium rounded-lg shadow-2xl text-sm px-5 py-2.5 text-center flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800"
     >
       {{ "€ " + parseFloat(totale).toFixed(2) }}
     </div>
