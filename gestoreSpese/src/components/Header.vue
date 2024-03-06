@@ -11,13 +11,13 @@ export default {
 </script>
 
 <template>
-  <nav class="bg-slate-100 w-[100%]">
-    <div class="w-screen flex items-center justify-between mb-8 p-4">
+  <nav class="bg-[#111827]">
+    <div class="flex items-center justify-between p-4">
       <div class="flex items-center space-x-3 rtl:space-x-reverse">
         <div class="h-[150px] w-16 md:w-32">
           <img :src="logo" class="h-auto rounded-full" alt="Logo" />
         </div>
-        <span class="text-xl font-bold pl-4 dark:text-white"
+        <span class="text-xl font-bold pl-4 text-white"
           >GestioneSpesa</span
         >
       </div>
@@ -27,7 +27,7 @@ export default {
           data-collapse-toggle="navbar-search"
           aria-controls="navbar-search"
           aria-expanded="false"
-          class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1"
+          class="md:hidden text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 rounded-lg text-sm p-2.5 me-1"
         >
           <svg
             class="w-5 h-5"
@@ -51,7 +51,7 @@ export default {
             class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
           >
             <svg
-              class="w-4 h-4 text-gray-500 dark:text-gray-400"
+              class="w-4 h-4 text-gray-500"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -108,7 +108,7 @@ export default {
             class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
           >
             <svg
-              class="w-4 h-4 text-gray-500 dark:text-gray-400"
+              class="w-4 h-4 text-gray-500"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -136,22 +136,25 @@ export default {
           <li>
             <router-link
               to="/"
-              class="block py-2 px-3 text-white bg-blue-700 rounded-full md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+              class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:p-0"
               aria-current="page"
+              exact-active-class="text-red-900"
               >Home</router-link
             >
           </li>
           <li>
             <router-link
               to="/about"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:p-0"
+              exact-active-class="text-red-900"
               >About</router-link
             >
           </li>
           <li>
             <router-link
               to="/list"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:p-0"
+              exact-active-class="text-red-900"
               >List</router-link
             >
           </li>
