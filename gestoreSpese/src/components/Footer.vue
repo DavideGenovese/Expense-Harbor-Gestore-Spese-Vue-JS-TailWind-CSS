@@ -86,7 +86,7 @@ export default {
                   </svg>
                 </a>
               </div>
-              <div class="mt-8 md:mt-0 md:order-1">
+              <div class="mt-8 md:mt-0 w-full">
                 <span class="mt-2 text-l font-light text-black">
                   Copyright © 2024
                  

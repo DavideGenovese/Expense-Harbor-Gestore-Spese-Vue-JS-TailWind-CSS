@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <p class="h-screen"> Hai mai pensato di non riuscire a controllarti nelle spese?
+    <p class="h-screen mt-10"> Hai mai pensato di non riuscire a controllarti nelle spese?
         Questa app arriva proprio per te!
         Potrai elencare gli acquisti con i relativi prezzi e vedere ciò che potresti
         spendere, in più potrai anche vedere le spese effettuate in precedenza.
