@@ -25,6 +25,6 @@ export default {
 
 <template>
   <div class="bg-[#111827] h-screen">
-    <ListCard  :list="dataList" :totale="sommaTotale" />
+    <ListCard :list="dataList" :totale="sommaTotale" />
   </div>
 </template>
