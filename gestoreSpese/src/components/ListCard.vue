@@ -54,9 +54,12 @@ export default {
   <CreateItem v-show="showCreate" />
   <EditItem v-show="showEdit" :item="itemToEdit"></EditItem>
   <div class="flex justify-end items-center">
-    <button @click="createNew">
-      <span v-if="!showCreate">Aggiungi Nuovo</span>
-      <span v-else>Chiudi</span>
+    <button
+      @click="createNew"
+      type="button"
+      class="text-white m-4 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+    >
+      <span v-if="!showCreate">Aggiungi Nuovo</span> <span v-else>Chiudi</span>
     </button>
   </div>
 
