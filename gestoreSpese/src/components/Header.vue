@@ -26,7 +26,7 @@ export default {
     </router-link>
     <div>
       <router-link to="/">
-        <span class="text-4xl font-bold text-white text-center"
+        <span class=" text-3xl md:text-4xl font-bold text-white text-center"
           >Gestione Spesa</span
         >
       </router-link>
