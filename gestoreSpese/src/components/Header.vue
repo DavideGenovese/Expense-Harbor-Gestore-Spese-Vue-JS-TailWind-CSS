@@ -26,22 +26,38 @@ export default {
     </router-link>
     <div>
       <router-link to="/">
-        <span class="text-4xl font-bold text-white text-center leading-4"
+        <span class="text-4xl font-bold text-white text-center"
           >Gestione Spesa</span
         >
       </router-link>
     </div>
-    <div>
+    <div class="flex justify-center items-center">
       <!-- KRABBY PATTY -->
-      <div @click="setHamburger" class="grid place-content-center">
+
+      <button
+        class="text-white w-10 h-10 relative focus:outline-none md:hidden"
+        @click="setHamburger"
+      >
         <div
-          class="md:hidden w-12 h-2 m-2 bg-white rounded-full before:w-12 before:content-[''] before:absolute before:h-2 before:bg-white before:rounded-full before:-translate-y-4 before:transition-all before:duration-150 after:content-[''] after:absolute after:w-12 after:h-2 after:bg-white after:rounded-full after:translate-y-4 after:transition-all after:duration-150"
-          :class="{
-            'h-0 bg-white before:translate-y-0 before:rotate-45 after:translate-y-0 :after:-rotate-45':
-              hamburger,
-          }"
-        ></div>
-      </div>
+          class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <span
+            aria-hidden="true"
+            class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+            :class="{ 'rotate-45': hamburger, ' -translate-y-1.5': !hamburger }"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+            :class="{ 'opacity-0': hamburger }"
+          ></span>
+          <span
+            aria-hidden="true"
+            class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out"
+            :class="{ '-rotate-45': hamburger, ' translate-y-1.5': !hamburger }"
+          ></span>
+        </div>
+      </button>
 
       <div class="mt-3"></div>
       <ul
