@@ -1,6 +1,10 @@
 <script>
 import CreateItem from "./CreateItem.vue";
 import EditItem from "./EditItem.vue";
+import { jsPDF } from "jspdf";
+import lunr from "lunr";
+import html2canvas from "html2canvas";
+import Papa from "papaparse";
 
 export default {
   props: ["list", "totale"],
@@ -16,11 +20,17 @@ export default {
       categoria: "Seleziona Categoria",
       itemToDelete: "",
       itemToEdit: "",
+      idx: null, // Aggiungi  per memorizzare l'indice Lunr.js
+      searchQuery: "", // Aggiungi  per memorizzare la query di ricerca
     };
   },
   components: {
     CreateItem,
     EditItem,
+  },
+
+  mounted() {
+    this.createSearchIndex(); // Chiama la funzione per creare l'indice di ricerca al montaggio del componente
   },
 
   methods: {
@@ -74,6 +84,62 @@ export default {
         this.itemToEdit = this.list[index];
       }
     },
+
+    exportToPDF() {
+      const element = this.$refs.tableToExport;
+      html2canvas(element).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jsPDF({
+          orientation: "landscape",
+          unit: "pt",
+          format: [canvas.width, canvas.height],
+        });
+
+        pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
+        pdf.save("spese.pdf");
+      });
+    },
+
+    createSearchIndex() {
+      let lista = this.list;
+      this.idx = lunr(function () {
+        this.ref("id");
+        this.field("categoria");
+        this.field("descrizione");
+        this.field("importo");
+        lista.forEach((item) => {
+          this.add(item);
+        });
+      });
+    },
+
+    searchItems() {
+      if (!this.idx || !this.searchQuery) {
+        this.filter = false;
+        return;
+      }
+      this.filteredList = this.idx
+        .search(this.searchQuery)
+        .map(({ ref }) => this.list.find((item) => item.id.toString() === ref));
+      this.filteredSomma = 0;
+      this.filteredList.forEach((element) => {
+        this.filteredSomma += element.importo;
+      });
+      this.filter = true; // Attiva il filtro per mostrare i risultati della ricerca
+    },
+
+    exportToCSVWithPapaParse() {
+      const csv = Papa.unparse(this.list);
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", "spese.csv");
+      link.style.visibility = "hidden";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    },
   },
 };
 </script>
@@ -82,39 +148,49 @@ export default {
   <CreateItem v-show="showCreate" />
   <EditItem v-show="showEdit" :item="itemToEdit"></EditItem>
   <div class="relative flex justify-between items-center sm:px-5 sm:pt-2">
-    <div>
-      <button
-        @click="showMenu"
-        data-dropdown-toggle="dropdown"
-        class="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center bg-gray-800 hover:bg-gray-700 focus:ring-gray-300"
-        type="button"
-      >
-        {{ categoria }}
-        <svg
-          class="w-2.5 h-2.5 ms-3"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
+    <div class="flex gap-4">
+      <div>
+        <button
+          @click="showMenu"
+          data-dropdown-toggle="dropdown"
+          class="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center bg-gray-800 hover:bg-gray-700 focus:ring-gray-300"
+          type="button"
         >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m1 1 4 4 4-4"
-          />
-        </svg>
-      </button>
+          {{ categoria }}
+          <svg
+            class="w-2.5 h-2.5 ms-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"
+            />
+          </svg>
+        </button>
 
-      <a
-        v-show="filter"
-        class="text-red-500 cursor-pointer"
-        @click="resetCategoria"
-      >
-        Reset
-      </a>
+        <a
+          v-show="filter"
+          class="text-white cursor-pointer"
+          @click="resetCategoria"
+        >
+          Reset
+        </a>
+      </div>
+
+      <input
+        v-model="searchQuery"
+        @input="searchItems"
+        placeholder="Ricerca"
+        class="block h-auto w-50 rounded-lg p-2 text-sm text-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
     </div>
+
     <button
       @click="createNew"
       type="button"
@@ -123,6 +199,7 @@ export default {
       <span v-if="!showCreate">Aggiungi Nuovo</span> <span v-else>Chiudi</span>
     </button>
   </div>
+
   <!-- Menu dropdown -->
   <div v-show="menu" class="absolute sm:px-5 sm:pb-2">
     <div
@@ -145,6 +222,7 @@ export default {
 
   <div class="mx-4 overflow-x-auto shadow-md sm:rounded-lg">
     <table
+      ref="tableToExport"
       class="w-full text-sm text-left rtl:text-right text-gray-600 dark:text-gray-400"
     >
       <thead class="text-sm uppercase bg-gray-700 text-gray-400">
@@ -409,18 +487,28 @@ export default {
       </tbody>
     </table>
   </div>
-  <div class="flex justify-end p-4 min-w-8 mx-auto">
+  <div class="flex justify-between p-4 min-w-8 mx-auto">
+    <div>
+      <button
+        @click="exportToPDF"
+        type="button"
+        class="text-white m-4 bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Esporta in PDF
+      </button>
+      <button
+        @click="exportToCSVWithPapaParse"
+        type="button"
+        class="text-white m-4 bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Esporta in CSV
+      </button>
+    </div>
     <div
       v-show="filter"
       class="my-4 text-white focus:ring-4 focus:outline-none font-medium rounded-lg shadow-2xl text-sm px-5 py-2.5 text-center flex justify-center items-center bg-gray-800 hover:bg-gray-700 focus:ring-gray-800"
     >
-      {{
-        "Spesa Categoria " +
-        this.categoria +
-        " = " +
-        "€ " +
-        parseFloat(filteredSomma).toFixed(2)
-      }}
+      {{ "Spesa Filtrata = € " + parseFloat(filteredSomma).toFixed(2) }}
     </div>
     <div
       v-show="!filter"
