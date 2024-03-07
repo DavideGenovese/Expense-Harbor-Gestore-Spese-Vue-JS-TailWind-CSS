@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <div class="p-4 rounded-lg shadow bg-gray-800 mx-4 sm:px-5 sm:py-2">
+  <div class="p-4 mx-4 rounded-lg shadow bg-gray-800 sm:px-5 sm:py-2">
     <!-- Modal body -->
     <form>
       <div class="grid gap-4 mb-4 sm:grid-cols-2">

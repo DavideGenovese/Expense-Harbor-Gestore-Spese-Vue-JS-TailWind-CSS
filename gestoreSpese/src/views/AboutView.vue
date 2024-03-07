@@ -144,7 +144,7 @@
           <li
             class="flex justify-center items-center mb-4 font-bold text-white"
           >
-          Kadrije Kashari
+            Kadrije Kashari
           </li>
           <li class="flex mr-5 text-white">
             <span class="mr-10">GitHub</span>
