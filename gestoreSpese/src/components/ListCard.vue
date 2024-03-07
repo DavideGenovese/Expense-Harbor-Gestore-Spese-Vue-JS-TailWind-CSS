@@ -86,7 +86,7 @@ export default {
       <button
         @click="showMenu"
         data-dropdown-toggle="dropdown"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-white  focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center bg-gray-800 hover:bg-gray-700 focus:ring-gray-300"
         type="button"
       >
         {{ categoria }}
@@ -109,7 +109,7 @@ export default {
 
       <a
         v-show="filter"
-        class="text-red-500 cursor-pointer"
+        class="text-white cursor-pointer"
         @click="resetCategoria"
       >
         Reset
@@ -135,7 +135,7 @@ export default {
         <li v-for="item in list" :key="item.categoria">
           <a
             @click="setCategoria(item.categoria)"
-            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+            class="block px-4 py-2  hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
             >{{ item.categoria }}</a
           >
         </li>
