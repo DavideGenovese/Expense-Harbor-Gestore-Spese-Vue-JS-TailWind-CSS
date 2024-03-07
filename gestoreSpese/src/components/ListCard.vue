@@ -235,7 +235,7 @@ export default {
           <th scope="col" class="px-6 py-3">Categoria</th>
           <th scope="col" class="px-6 py-3">Descrizione</th>
           <th scope="col" class="px-6 py-3">Importo</th>
-          <th scope="col" class="px-6 py-3">Actions</th>
+          <th scope="col" class="px-6 py-3">Azioni</th>
         </tr>
       </thead>
       <tbody v-if="list && !filter" v-for="item in list" :key="item.id">
