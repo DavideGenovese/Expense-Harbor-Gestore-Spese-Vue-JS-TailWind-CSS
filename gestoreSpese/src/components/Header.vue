@@ -13,13 +13,9 @@ export default {
 <template>
   <nav class="bg-[#111827]">
     <div class="flex items-center justify-between p-4">
-      <div class="flex items-center space-x-3 rtl:space-x-reverse">
-        <div class="h-[150px] w-16 md:w-32">
-          <img :src="logo" class="h-auto rounded-full" alt="Logo" />
-        </div>
-        <span class="text-xl font-bold pl-4 text-white"
-          >GestioneSpesa</span
-        >
+      <div class="flex items-center space-x-3 rtl:space-x-reverse md:flex">
+        <img :src="logo" class="h-auto max-w-40 rounded-full" alt="Logo" />
+        <span class="text-xl font-bold text-white">Gestione Spesa</span>
       </div>
       <div class="flex md:order-2">
         <button
@@ -70,7 +66,7 @@ export default {
           <input
             type="text"
             id="search-navbar"
-            class="block  p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Search..."
           />
         </div>

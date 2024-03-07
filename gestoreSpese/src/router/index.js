@@ -15,6 +15,7 @@ const router = createRouter({
       path: "/list",
       name: "list",
       component: ListView,
+      
     },
     {
       path: "/about",
