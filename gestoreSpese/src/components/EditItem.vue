@@ -89,19 +89,21 @@ export default {
         </div>
       </div>
       <div class="flex justify-end">
-        <button
+        <a
+          href="/list"
           @click="saveChange(item.id)"
           type="submit"
           class="font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 border-2 border-green-500 text-green-500 hover:text-white hover:bg-green-600 focus:ring-green-800"
         >
           Save
-        </button>
-        <button
+        </a>
+        <a
+          href="/list"
           type="submit"
           class="font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 border-2 border-red-500 text-red-500 hover:text-white hover:bg-red-600 focus:ring-red-800"
         >
           Delete
-        </button>
+        </a>
       </div>
     </form>
   </div>
