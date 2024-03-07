@@ -101,7 +101,7 @@
           <li class="flex mr-5 text-white">
             <span class="mr-10 mt-4">Linkedin </span
             ><a
-              href=""
+              href="https://www.linkedin.com/in/claudio-marotta-1a652a1a1/"
               class="text-gray-400 hover:text-gray-500 mt-4 [&>svg]:h-4 [&>svg]:w-4"
             >
               <svg
@@ -144,12 +144,12 @@
           <li
             class="flex justify-center items-center mb-4 font-bold text-white"
           >
-            Claudio Simone Marotta
+            Kadrije Kashari
           </li>
           <li class="flex mr-5 text-white">
             <span class="mr-10">GitHub</span>
             <a
-              href="https://github.com/claudiosm10"
+              href="https://github.com/Kadrije"
               class="text-gray-400 hover:text-gray-500"
             >
               <svg
@@ -169,7 +169,7 @@
           <li class="flex mr-5 text-white">
             <span class="mr-10 mt-4">Linkedin </span
             ><a
-              href=""
+              href="https://www.linkedin.com/in/kadrije-kashari-6597641b1"
               class="text-gray-400 hover:text-gray-500 mt-4 [&>svg]:h-4 [&>svg]:w-4"
             >
               <svg
@@ -186,7 +186,7 @@
           <li class="flex mr-5 text-white">
             <span class="mr-14 mt-4">Email </span>
             <a
-              href="mailto: claudiomarotta10@gmail.com"
+              href="mailto: k.kashari1994@gmail.com"
               class="me-3 [&>svg]:h-5 [&>svg]:w-5 text-gray-400 hover:text-gray-500 mt-4"
             >
               <svg
