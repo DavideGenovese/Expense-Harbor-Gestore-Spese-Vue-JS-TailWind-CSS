@@ -1,15 +1,16 @@
 <script>
-import foto from "@/assets/foto.jpg";
+import logo from "@/assets/logo.png";
 
 export default {
   data() {
     return {
-      logo: foto,
+      list: JSON.parse(localStorage.getItem("item")) ?? [],
+      logo: logo,
       hamburger: false,
     };
   },
   methods: {
-    setHamburgher() {
+    setHamburger() {
       this.hamburger = !this.hamburger;
     },
   },
@@ -17,27 +18,26 @@ export default {
 </script>
 
 <template>
-  <nav class="flex justify-between items-center bg-[#111827]">
+  <nav class="flex justify-between items-center p-4 bg-[#111827]">
+    <router-link to="/">
+      <div>
+        <img :src="logo" class="h-auto max-w-[150px] rounded-full" alt="Logo" />
+      </div>
+    </router-link>
     <div>
-      <img
-        :src="logo"
-        class="h-auto max-w-[150px] p-4 rounded-full"
-        alt="Logo"
-      />
-    </div>
-    <div>
-      <span class="text-4xl font-bold text-white text-center leading-4"
-        >Gestione Spesa</span
-      >
+      <router-link to="/">
+        <span class="text-4xl font-bold text-white text-center leading-4"
+          >Gestione Spesa</span
+        >
+      </router-link>
     </div>
     <div>
       <!-- KRABBY PATTY -->
-
-      <div @click="setHamburgher" class="grid place-content-center">
+      <div @click="setHamburger" class="grid place-content-center">
         <div
           class="md:hidden w-12 h-2 m-2 bg-white rounded-full before:w-12 before:content-[''] before:absolute before:h-2 before:bg-white before:rounded-full before:-translate-y-4 before:transition-all before:duration-150 after:content-[''] after:absolute after:w-12 after:h-2 after:bg-white after:rounded-full after:translate-y-4 after:transition-all after:duration-150"
           :class="{
-            'h-0 bg-white before:translate-y-0 before:rotate-45 after:translate-y-0 after:-rotate-45':
+            'h-0 bg-white before:translate-y-0 before:rotate-45 after:translate-y-0 :after:-rotate-45':
               hamburger,
           }"
         ></div>
@@ -45,12 +45,12 @@ export default {
 
       <div class="mt-3"></div>
       <ul
-        class="hidden md:flex justify-center items-center p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 dark:border-gray-700"
+        class="hidden md:flex justify-center items-center text-white p-4 md:p-0 mt-4 font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 dark:border-gray-700"
       >
         <li>
           <router-link
             to="/"
-            class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:p-0"
+            class="block py-2 px-3 rounded md:hover:bg-transparent md:p-0"
             aria-current="page"
             exact-active-class="text-blue-700"
           >
@@ -73,7 +73,7 @@ export default {
         <li>
           <router-link
             to="/about"
-            class="block py-2 px-10 text-white rounded md:hover:bg-transparent md:p-0"
+            class="block py-2 px-10 rounded md:hover:bg-transparent md:p-0"
             exact-active-class="text-blue-700"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ export default {
         <li>
           <router-link
             to="/list"
-            class="block py-2 px-3 text-white rounded md:hover:bg-transparent md:p-0"
+            class="block py-2 px-3 rounded md:hover:bg-transparent md:p-0"
             exact-active-class="text-blue-700"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -108,6 +108,29 @@ export default {
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
+              />
+            </svg>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/chart" exact-active-class="text-blue-700">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z"
               />
             </svg>
           </router-link>

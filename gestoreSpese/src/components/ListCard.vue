@@ -5,6 +5,7 @@ import { jsPDF } from "jspdf";
 import lunr from "lunr";
 import html2canvas from "html2canvas";
 import Papa from "papaparse";
+import ExpenseChart from './ExpenseChart.vue';
 
 export default {
   props: ["list", "totale"],
@@ -27,6 +28,7 @@ export default {
   components: {
     CreateItem,
     EditItem,
+    ExpenseChart
   },
 
   mounted() {
@@ -517,4 +519,5 @@ export default {
       {{ "Spesa Totale " + "= " + "€ " + parseFloat(totale).toFixed(2) }}
     </div>
   </div>
+  
 </template>
