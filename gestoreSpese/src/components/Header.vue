@@ -26,7 +26,7 @@ export default {
     </router-link>
     <div>
       <router-link to="/">
-        <span class=" text-3xl md:text-4xl font-bold text-white text-center"
+        <span class="text-3xl md:text-4xl font-bold text-white text-center"
           >Gestione Spesa</span
         >
       </router-link>
@@ -155,25 +155,37 @@ export default {
   </nav>
 
   <div v-show="hamburger" class="relative">
-    <ul class="bg-gray-700 h-screen p-2 absolute w-full">
+    <ul class="bg-gray-700 h-screen p-2 absolute w-full z-20">
       <li class="flex items-center h-20">
-        <router-link to="/" class="text-white text-2xl w-screen"
+        <router-link
+          to="/"
+          @click="setHamburger"
+          class="text-white text-2xl w-screen"
           >Home</router-link
         >
       </li>
       <li class="flex items-center h-20">
-        <router-link to="/about" class="text-white text-2xl w-screen"
+        <router-link
+          to="/about"
+          @click="setHamburger"
+          class="text-white text-2xl w-screen"
           >About</router-link
         >
       </li>
       <li class="flex items-center h-20">
-        <router-link to="/list" class="text-white text-2xl w-screen"
+        <router-link
+          to="/list"
+          @click="setHamburger"
+          class="text-white text-2xl w-screen"
           >Tabella lista</router-link
         >
       </li>
 
       <li class="flex items-center h-20">
-        <router-link to="/chart" class="text-white text-2xl w-screen"
+        <router-link
+          to="/chart"
+          @click="setHamburger"
+          class="text-white text-2xl w-screen"
           >Grafico</router-link
         >
       </li>
