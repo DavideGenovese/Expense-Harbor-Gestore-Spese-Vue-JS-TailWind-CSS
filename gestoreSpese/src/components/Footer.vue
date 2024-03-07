@@ -13,6 +13,7 @@ export default {
 <template>
         <footer class="bg-[#111827]" aria-labelledby="footer-heading">
             <h2 id="footer-heading" class="sr-only">Footer</h2>
+            <div class="flex flex-col md:justify-between md:items-center">
             <div class="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-20">
               <div class="md:grid md:grid-cols-5 md:gap-8">
                 <div class="flex items-center">
@@ -24,14 +25,15 @@ export default {
                 <div class="mt-12 md:mt-0">
                   
                 </div>
+                <div class="flex md:ml-[300px]">
                 <div class="mt-12 md:mt-0">
                   <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">Resources</h3>
                   <ul role="list" class="mt-4 space-y-4">
                     <li>
-                      <a href="https://tailwindcss.com/" class="text-sm font-semibold text-white [&>svg]:h-16 [&>svg]:w-12"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#prefix__clip0)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h54v32.4H0z"/></clipPath></defs></svg></a>
+                      <a href="https://tailwindcss.com/" class="text-sm font-semibold text-white [&>svg]:h-14 [&>svg]:w-10"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#prefix__clip0)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h54v32.4H0z"/></clipPath></defs></svg></a>
                     </li>
                     <li>
-                      <a href="https://vuejs.org/" class="text-sm font-semibold text-white"><svg width="40px" height="40px" viewBox="0 -17.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                      <a href="https://vuejs.org/" class="text-sm font-semibold text-white"><svg width="30px" height="30px" viewBox="0 -17.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
 	<g>
 		<path d="M204.8,0 L256,0 L128,220.8 L0,0 L50.56,0 L97.92,0 L128,51.2 L157.44,0 L204.8,0 Z" fill="#41B883">
 
@@ -49,7 +51,7 @@ export default {
                   </ul>
                   
                 </div>
-                <div class="mt-12 md:mt-0">
+                <div class="mt-12 mx-20 md:mt-0">
                   <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">Legal</h3>
                   <ul role="list" class="mt-4 space-y-4">
                     <li>
@@ -63,10 +65,10 @@ export default {
                   
                 </div>
                 <div class="mt-12 md:mt-0">
-                  <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">Follow us</h3>
+                  <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">FollowUs</h3>
                   <ul role="list" class="mt-4 space-y-4">
                     <li>
-                      <a href="https://www.linkedin.com/" class="text-sm font-semibold text-white [&>svg]:h-6 [&>svg]:w-4"><svg
+                      <a href="https://www.linkedin.com/" class="text-sm font-normal text-white [&>svg]:h-6 [&>svg]:w-4"><svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="currentColor"
                     viewBox="0 0 448 512">
@@ -76,7 +78,7 @@ export default {
                   </svg> Linkedin </a>
                     </li>
                     <li>
-                      <a href="https://github.com/" class="text-sm font-semibold text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <a href="https://github.com/" class="text-sm font-normal text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
                   </svg> GitHub </a>
                     </li>
@@ -85,7 +87,21 @@ export default {
                 </div>
               </div>
             </div>
-            <div class="flex justify-end items-center px-5 py-12 mx-auto bg-[#111827] max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-20">
+          </div>
+        </div>
+            <div class="flex justify-between items-center mx-[150px]">
+              <div class="mt-8 md:mt-0 w-full">
+
+<div class="mt-8 ml-6 flex justify-start items-center md:mt-0 md:order-1">
+  <span class="p-4 mb-1 text-[18px] text-white justify-start items-center">Copyright © 2024.All Rights Reserved.</span>
+  <span><RouterLink
+to="/about" class="mt-2 mb-8 font-normal text-white justify-start items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+</svg></RouterLink>
+  </span>
+</div>
+</div>
+            <div class="flex justify-center items-center px-5 py-12 mx-auto bg-[#111827] max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-20">
               <div class="flex justify-center items-center space-x-6 md:order-last md:mb-0">  
                 <a href="#" class="text-gray-400 hover:text-gray-500">
                   <span class="sr-only">Instagram</span>
@@ -112,16 +128,6 @@ export default {
                 </a>
               </div>
             </div>
-              <div class="mt-8 md:mt-0 w-full">
-
-              <div class="mt-8 ml-6 flex justify-start items-center md:mt-0 md:order-1">
-                <span class="p-4 mb-1 text-[18px] text-white justify-start items-center">Copyright © 2024.All Rights Reserved.</span>
-                <span><RouterLink
-              to="/about" class="mt-2 mb-8 font-normal text-white justify-start items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
-</svg></RouterLink>
-                </span>
-              </div>
-            </div>
+          </div>
   </footer>
 </template>
