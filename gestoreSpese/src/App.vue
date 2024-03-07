@@ -8,7 +8,9 @@ export default{
 </script>
 
 <template>
+  <div class="bg-gray-900">
   <Header />
     <RouterView />
   <Footer />
+  </div>
 </template>
