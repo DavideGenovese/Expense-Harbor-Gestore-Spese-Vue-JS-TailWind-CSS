@@ -33,7 +33,6 @@ export default {
     </div>
     <div class="flex justify-center items-center">
       <!-- KRABBY PATTY -->
-
       <button
         class="text-white w-10 h-10 relative focus:outline-none md:hidden"
         @click="setHamburger"
@@ -154,41 +153,30 @@ export default {
       </ul>
     </div>
   </nav>
-  <div class="h-screen w-full hidden">
-    <div id="navbar-hamburger">
-      <ul
-        class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
-      >
-        <li>
-          <a
-            href="#"
-            class="block py-2 px-3 text-white bg-blue-700 rounded dark:bg-blue-600"
-            aria-current="page"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            >Services</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white"
-            >Pricing</a
-          >
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            >Contact</a
-          >
-        </li>
-      </ul>
-    </div>
+
+  <div v-show="hamburger" class="relative">
+    <ul class="bg-gray-700 h-screen p-2 absolute w-full">
+      <li class="flex items-center h-20">
+        <router-link to="/" class="text-white text-2xl w-screen"
+          >Home</router-link
+        >
+      </li>
+      <li class="flex items-center h-20">
+        <router-link to="/about" class="text-white text-2xl w-screen"
+          >About</router-link
+        >
+      </li>
+      <li class="flex items-center h-20">
+        <router-link to="/list" class="text-white text-2xl w-screen"
+          >Tabella lista</router-link
+        >
+      </li>
+
+      <li class="flex items-center h-20">
+        <router-link to="/chart" class="text-white text-2xl w-screen"
+          >Grafico</router-link
+        >
+      </li>
+    </ul>
   </div>
 </template>
