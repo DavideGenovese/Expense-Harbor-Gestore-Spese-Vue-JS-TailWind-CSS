@@ -14,10 +14,11 @@ export default {
   <footer class="bg-[#111827]">
     <!-- gestione spesa -->
     <div class="flex flex-col justify-center items-center mt-8 md:flex-row md:justify-around">
-      <div>
+      <div> <RouterLink to="/">
         <img :src="logo" class="max-w-[150px] h-auto rounded-full" alt="logo" />
         <span class="m-2 text-xl font-semibold whitespace-nowrap text-white"
         >Gestione Spesa</span>
+      </RouterLink>
       </div>
 
       <!-- resource -->
@@ -32,7 +33,7 @@ export default {
         <li>
           <a
             href="https://tailwindcss.com/"
-            class="text-sm font-semibold  text-white [&>svg]:h-12 [&>svg]:w-10"
+            class="text-sm  text-white [&>svg]:h-12 [&>svg]:w-10"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -55,7 +56,7 @@ export default {
         <li>
           <a
             href="https://vuejs.org/"
-            class="text-sm font-semibold text-white [&>svg]:h-12 [&>svg]:w-10"
+            class="text-sm  text-white [&>svg]:h-12 [&>svg]:w-10"
             ><svg
               viewBox="0 -17.5 256 256"
               version="1.1"
@@ -84,18 +85,18 @@ export default {
     </div>
 
       <!-- Legal -->
-      <div class="mt-2">
-      <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">
+      <div class="mt-3">
+      <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase mb-2">
         Legal
       </h3>
       <ul role="list" class="space-y-2">
         <li>
-          <a href="#" class="text-sm font-semibold text-white">
+          <a href="#" class="text-sm font-normal text-white">
             Privacy policy
           </a>
         </li>
         <li>
-          <a href="#" class="text-sm font-semibold text-white">
+          <a href="#" class="text-sm font-normal text-white">
             Terms & conditions
           </a>
         </li>
@@ -104,10 +105,10 @@ export default {
 
       <!-- Follow Us -->
       <div class="mt-2">
-      <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">
+      <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase mb-2">
         Follow Us
       </h3>
-      <ul role="list" class="space-x-4 flex justify-center items-center">
+      <ul role="list" class="space-x-4 flex justify-center items-center ml-8">
         <li>
           
           <a
@@ -157,7 +158,7 @@ export default {
         <span
           class="p-4 mb-1 text-[18px] text-white justify-start items-center"
         >
-          Copyright © 2024.All Rights Reserved.
+          Copyright © 2024. All Rights Reserved.
         </span>
         <span
           ><RouterLink
