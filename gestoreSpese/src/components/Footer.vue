@@ -12,24 +12,24 @@ export default {
 
 <template>
         <footer class="bg-[#111827]" aria-labelledby="footer-heading">
-            <div class="flex flex-col md:justify-between md:items-center">
-              <div class="px-5 py-12 mx-auto max-w-7xl lg:py-16 md:px-12 lg:px-20">
-              <div class="">
-                <div class="flex justify-center items-center md:justify-start">
+            <div class="flex flex-col items-center">
+              <div class="px-5 py-12">
+              <div class="flex ">
+                <div class="flex justify-center items-center">
                   
                     <img :src="logo"  class="w-[60px] rounded-full" alt="logo" />
-                    <span class=" m-2 self-center text-xl font-semibold whitespace-nowrap text-white">Gestione Spesa</span>
+                    <span class=" m-2 text-xl font-semibold whitespace-nowrap text-white">Gestione Spesa</span>
               
                 </div>
-                <div class="flex md:ml-[300px]">
+                <div class="flex flex-col justify-center items-center">
                     <div class="mt-12 md:mt-0">
-                    <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">Resources</h3>
-                    <ul role="list" class="mt-4 space-y-4">
+                    <h3 class="text-xs mr-[52px] font-semibold tracking-wider text-[#2563cb] uppercase">Resources</h3>
+                    <ul role="list" class="mt-4 space-x-4 flex justify-center items-center ">
                       <li>
-                       <a href="https://tailwindcss.com/" class="text-sm font-semibold text-white [&>svg]:h-14 [&>svg]:w-10"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#prefix__clip0)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h54v32.4H0z"/></clipPath></defs></svg></a>
+                       <a href="https://tailwindcss.com/" class="text-sm font-semibold mr-[52px] text-white [&>svg]:h-12 [&>svg]:w-10"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33"><g clip-path="url(#prefix__clip0)"><path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/></g><defs><clipPath id="prefix__clip0"><path fill="#fff" d="M0 0h54v32.4H0z"/></clipPath></defs></svg></a>
                       </li>
                       <li>
-                        <a href="https://vuejs.org/" class="text-sm font-semibold text-white"><svg width="30px" height="30px" viewBox="0 -17.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
+                        <a href="https://vuejs.org/" class="text-sm font-semibold text-white mr-[52px]"><svg width="25px" height="25px" viewBox="0 -17.5 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
 	                        <g>
 		                      <path d="M204.8,0 L256,0 L128,220.8 L0,0 L50.56,0 L97.92,0 L128,51.2 L157.44,0 L204.8,0 Z" fill="#41B883">
 
@@ -60,8 +60,8 @@ export default {
                   
                   </div>
                   <div class="mt-12 md:mt-0">
-                  <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">FollowUs</h3>
-                  <ul role="list" class="mt-4 space-y-4">
+                  <h3 class="text-xs font-semibold tracking-wider text-[#2563cb] uppercase">Follow Us</h3>
+                  <ul role="list" class="mt-4 space-x-4 flex justify-center items-center">
                     <li>
                       <a href="https://www.linkedin.com/" class="text-sm font-normal text-white [&>svg]:h-6 [&>svg]:w-4"><svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export default {
               </div>
             </div>
             <div class="flex flex-col justify-center items-center md:flex-row md:justify-between ">
-                <div class="mt-8 ml-6 flex md:justify-end items-center">
+                <div class="mt-8 md:ml-10 flex md:justify-start items-center">
                         <span class="p-4 mb-1 text-[18px] text-white justify-start items-center">
                           Copyright © 2024.All Rights Reserved.
                         </span>
@@ -97,7 +97,7 @@ export default {
                             </svg></RouterLink>
                         </span>
                       </div>
-                  <div class="flex justify-center items-center px-5 py-12 mx-auto bg-[#111827]">
+                  <div class="flex justify-center items-center px-5 py-12 bg-[#111827] md:mr-10">
               <div class="flex justify-center items-center space-x-6 ">  
                 <a href="#" class="text-gray-400 hover:text-gray-500">
                   <span class="sr-only">Instagram</span>
