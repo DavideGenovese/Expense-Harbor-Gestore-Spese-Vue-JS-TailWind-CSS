@@ -21,7 +21,6 @@ export default {
         importo: this.importo,
       });
       localStorage.setItem("item", JSON.stringify(this.item));
-      console.log(this.item);
     },
   },
 };

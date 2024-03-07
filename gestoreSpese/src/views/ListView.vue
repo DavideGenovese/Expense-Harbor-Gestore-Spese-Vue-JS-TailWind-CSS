@@ -9,6 +9,7 @@ export default {
     return {
       dataList: JSON.parse(localStorage.getItem("item")) ?? [],
       spesaTotale: 0,
+      categorie: [],
     };
   },
   computed: {
