@@ -17,7 +17,7 @@ export default {
       <div> <RouterLink to="/">
         <img :src="logo" class="max-w-[150px] h-auto rounded-full" alt="logo" />
         <span class="m-2 text-xl font-semibold whitespace-nowrap text-white"
-        >Gestione Spesa</span>
+        >Expense Harbor</span>
       </RouterLink>
       </div>
 

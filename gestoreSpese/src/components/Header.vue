@@ -27,7 +27,7 @@ export default {
     <div>
       <router-link to="/">
         <span class="text-3xl md:text-4xl font-bold text-white text-center"
-          >Gestione Spesa</span
+          >Expense Harbor</span
         >
       </router-link>
     </div>
