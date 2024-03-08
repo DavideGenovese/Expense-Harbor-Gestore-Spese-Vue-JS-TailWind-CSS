@@ -153,42 +153,43 @@ export default {
       </ul>
     </div>
   </nav>
+  <transition name="fade">
+    <div v-show="hamburger" class="relative">
+      <ul class="bg-gray-700 h-screen p-2 absolute w-full z-20">
+        <li class="flex items-center h-20 border-b-2 border-[#111827]">
+          <router-link
+            to="/"
+            @click="setHamburger"
+            class="text-white text-2xl w-screen"
+            >Home</router-link
+          >
+        </li>
+        <li class="flex items-center h-20 border-b-2 border-[#111827]">
+          <router-link
+            to="/about"
+            @click="setHamburger"
+            class="text-white text-2xl w-screen"
+            >About</router-link
+          >
+        </li>
+        <li class="flex items-center h-20 border-b-2 border-[#111827]">
+          <router-link
+            to="/list"
+            @click="setHamburger"
+            class="text-white text-2xl w-screen"
+            >Tabella lista</router-link
+          >
+        </li>
 
-  <div v-show="hamburger" class="relative">
-    <ul class="bg-gray-700 h-screen p-2 absolute w-full z-20">
-      <li class="flex items-center h-20">
-        <router-link
-          to="/"
-          @click="setHamburger"
-          class="text-white text-2xl w-screen"
-          >Home</router-link
-        >
-      </li>
-      <li class="flex items-center h-20">
-        <router-link
-          to="/about"
-          @click="setHamburger"
-          class="text-white text-2xl w-screen"
-          >About</router-link
-        >
-      </li>
-      <li class="flex items-center h-20">
-        <router-link
-          to="/list"
-          @click="setHamburger"
-          class="text-white text-2xl w-screen"
-          >Tabella lista</router-link
-        >
-      </li>
-
-      <li class="flex items-center h-20">
-        <router-link
-          to="/chart"
-          @click="setHamburger"
-          class="text-white text-2xl w-screen"
-          >Grafico</router-link
-        >
-      </li>
-    </ul>
-  </div>
+        <li class="flex items-center h-20 border-b-2 border-[#111827]">
+          <router-link
+            to="/chart"
+            @click="setHamburger"
+            class="text-white text-2xl w-screen"
+            >Grafico</router-link
+          >
+        </li>
+      </ul>
+    </div>
+  </transition>
 </template>

@@ -27,6 +27,7 @@ export default {
 </script>
 
 <template>
+   <transition name="bounce">
   <div class="rounded-lg shadow mx-4 p-4 bg-gray-800 sm:px-5 sm:py-2">
     <!-- Modal body -->
     <div class="grid gap-4 mb-4 sm:grid-cols-2">
@@ -107,4 +108,5 @@ export default {
       </a>
     </div>
   </div>
+  </transition>
 </template>
