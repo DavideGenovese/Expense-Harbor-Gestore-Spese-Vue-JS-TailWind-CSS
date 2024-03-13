@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+  .sourceSerif {
+    font-family: "Source Serif 4", Georgia, serif;
+  }
+}
 
 .fade-enter-active,
 .fade-leave-active {

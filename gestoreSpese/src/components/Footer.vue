@@ -14,10 +14,9 @@ export default {
   <footer class="bg-[#111827]">
     <!-- gestione spesa -->
     <div class="flex flex-col justify-center items-center mt-8 md:flex-row md:justify-around">
-      <div> <RouterLink to="/">
-        <img :src="logo" class="max-w-[150px] h-auto rounded-full" alt="logo" />
-        <span class="m-2 text-xl font-semibold whitespace-nowrap text-white"
-        >Expense Harbor</span>
+      <div class="max-w-[200px] h-auto"> <RouterLink to="/">
+        <img :src="logo" class="w-full rounded-full" alt="logo" />
+        <img src="../assets/Expense_Harbor_Logo.png" alt="logo Expense Harbor" class="w-full">
       </RouterLink>
       </div>
 

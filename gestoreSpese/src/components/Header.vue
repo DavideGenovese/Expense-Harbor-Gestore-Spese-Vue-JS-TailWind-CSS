@@ -24,11 +24,9 @@ export default {
         <img :src="logo" class="h-auto max-w-[150px] rounded-full" alt="Logo" />
       </div>
     </router-link>
-    <div>
+    <div class="h-auto max-w-[250px] md:max-w-[350px]">
       <router-link to="/">
-        <span class="text-3xl md:text-4xl font-bold text-white text-center"
-          >Expense Harbor</span
-        >
+        <img src="../assets/Expense_Harbor_Logo.png" alt="logo Expense Harbor">
       </router-link>
     </div>
     <div class="flex justify-center items-center">
