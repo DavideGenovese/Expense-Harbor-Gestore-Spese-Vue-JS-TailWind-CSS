@@ -292,7 +292,7 @@ export default {
                 />
               </svg>
             </button>
-
+            <transition name="bounce">
             <div
               v-show="confirmDelete"
               class="flex justify-center items-center overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
@@ -339,14 +339,14 @@ export default {
                       />
                     </svg>
                     <h3 class="mb-5 text-lg font-normal text-gray-400">
-                      Are you sure you want to delete?
+                      Sei sicuro di voler rimuovere?
                     </h3>
                     <button
                       @click="removeItem"
                       type="button"
                       class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center"
                     >
-                      Yes, I'm sure
+                      Conferma
                     </button>
                     <button
                       @click="showDelete"
@@ -354,12 +354,12 @@ export default {
                       type="button"
                       class="py-2.5 px-5 ms-3 text-sm font-medium focus:outline-none rounded-lg border focus:z-10 focus:ring-4 focus:ring-gray-700 bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700"
                     >
-                      No, cancel
+                     Annulla
                     </button>
                   </div>
                 </div>
               </div>
-            </div>
+            </div></transition>
           </td>
         </tr>
       </tbody>
