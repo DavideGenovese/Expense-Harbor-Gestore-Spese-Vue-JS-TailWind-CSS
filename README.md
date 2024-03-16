@@ -22,8 +22,6 @@ Esportazione Dati: Esporta le tue spese in formato CSV o PDF con le librerie jsP
 Responsive: Adatta a qualsiasi dispositivo per una perfetta esperienza mobile e desktop.
 
 ## Tecnologie utilizzate
-![Vue js_Logo_2 svg-removebg-preview](https://github.com/DavideGenovese/Expense-Harbor-Gestore-Spese-Vue-JS-TailWind-CSS/assets/157692968/ca697d6d-8681-428a-8554-35dca8e8ce0a)
-![tailwind-css-logo-vector-removebg-preview](https://github.com/DavideGenovese/Expense-Harbor-Gestore-Spese-Vue-JS-TailWind-CSS/assets/157692968/ff4be24d-98c6-498b-9889-a8eb778e8d8b)
 
 ## Vue.js ## 
 per la costruzione dell'interfaccia utente interattiva.
