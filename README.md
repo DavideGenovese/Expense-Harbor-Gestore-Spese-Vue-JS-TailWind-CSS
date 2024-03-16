@@ -23,17 +23,17 @@ Responsive: Adatta a qualsiasi dispositivo per una perfetta esperienza mobile e 
 
 ## Tecnologie utilizzate
 
-## Vue.js ## 
+## Vue.js  
 per la costruzione dell'interfaccia utente interattiva.
-## Tailwind CSS## 
+## Tailwind CSS 
 per un design personalizzato e responsive.
-## Chart.js## 
+## Chart.js 
 per la visualizzazione dei dati con grafici e diagrammi.
-## Lunr.js## 
+## Lunr.js 
 per la ricerca full-text lato client delle spese.
-## PapaParse## 
+## PapaParse
 per l'elaborazione e l'esportazione di dati in CSV.
-## jsPDF## 
+## jsPDF 
 per generare PDF lato client.
 
 ## Installazione e Setup
